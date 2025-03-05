@@ -3,7 +3,7 @@ from constants import (
 )
 
 
-def encrypt_vigenere(plaintext: str, key: str, sign: int = 1) -> str:
+def encrypt_vigenere(plaintext: str, key: str, reverse: bool = False) -> str:
     """
     >>> encrypt_vigenere("PYTHON", "A")
     'PYTHON'
@@ -15,6 +15,8 @@ def encrypt_vigenere(plaintext: str, key: str, sign: int = 1) -> str:
 
     key_len = len(key)
     key = key.lower()
+
+    sign = [1, -1][reverse]
 
     plaintext = list(plaintext)
 
